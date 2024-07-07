@@ -4,7 +4,7 @@ const app = express()
 const PORT = process.env.PORT || 3000
 require('dotenv').config()
 
-mongoose.connect('mongodb+srv://restapi:1234567890@cluster0.uwm39dj.mongodb.net/MERNproject?retryWrites=true&w=majority')
+mongoose.connect(process.env.MONGO_URI)
 .then(function(ans){
     app.listen(PORT, function(){
         console.log(`Server listening on PORT: ${PORT}`)
